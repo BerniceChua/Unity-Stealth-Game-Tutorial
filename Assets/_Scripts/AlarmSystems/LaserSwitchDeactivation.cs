@@ -7,11 +7,11 @@ public class LaserSwitchDeactivation : MonoBehaviour {
     [SerializeField] Material m_unlockedMaterial;
     
     private GameObject m_player;
-    private AudioSource m_audioSource;
+    private AudioSource m_audioSourceDeactivateLaser;
 
     private void Awake() {
         m_player = GameObject.FindGameObjectWithTag(Tags.player);
-        m_audioSource = GetComponent<AudioSource>();
+        m_audioSourceDeactivateLaser = GetComponent<AudioSource>();
     }
 
     private void OnTriggerStay(Collider other) {
@@ -25,18 +25,9 @@ public class LaserSwitchDeactivation : MonoBehaviour {
     void LaserDeactivation() {
         m_laser.SetActive(false);
 
-        Renderer screen = transform.Find("prop_switchUnit_screen_001").GetComponent<Renderer>();
+        Renderer screen = transform.Find("prop_switchUnit_screen").GetComponent<Renderer>();
         screen.material = m_unlockedMaterial;
-        m_audioSource.Play();
+        m_audioSourceDeactivateLaser.Play();
     }
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
