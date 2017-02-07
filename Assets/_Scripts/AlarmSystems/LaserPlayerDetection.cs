@@ -13,7 +13,7 @@ public class LaserPlayerDetection : MonoBehaviour {
         m_lastPlayerSighting = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<LastPlayerSighting>();
     }
 
-    void OnTrigger(Collider other) {
+    void OnTriggerStay(Collider other) {   // can also be "void OnTriggerEnter(Collider other) {"
         if (m_renderer.enabled) {
             if (other.gameObject == m_player) {
                 m_lastPlayerSighting.m_position = m_player.transform.position;
