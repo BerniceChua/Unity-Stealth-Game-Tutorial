@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LastPlayerSighting : MonoBehaviour {
     public Vector3 m_position = new Vector3(1000.0f, 1000.0f, 1000.0f);
-    [SerializeField] Vector3 m_resetPosition = new Vector3(1000.0f, 1000.0f, 1000.0f);
+    public Vector3 m_resetPosition = new Vector3(1000.0f, 1000.0f, 1000.0f);
     // the 2 above are arbitrary positions, but they are just positions that the player cannot get to.
 
     [SerializeField] float m_lightHighIntensity = 0.25f;
