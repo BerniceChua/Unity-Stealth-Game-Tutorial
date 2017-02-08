@@ -91,7 +91,7 @@ NavMeshSettings:
     manualCellSize: 0
     cellSize: 0.1
     accuratePlacement: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 9e60834ffb857c84dbfea9303141b2a1, type: 2}
 --- !u!1001 &106327221
 Prefab:
   m_ObjectHideFlags: 0
