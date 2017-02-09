@@ -9,7 +9,7 @@ public class EnemySight : MonoBehaviour {
      * enemy will not react.
      */
     [SerializeField] float m_fieldOfViewAngle = 110.0f;
-    [SerializeField] bool m_playerInSight;
+    public bool m_playerInSight;
     [SerializeField] Vector3 m_personalLastSighting;
 
     private NavMeshAgent m_nav;
@@ -124,8 +124,8 @@ public class EnemySight : MonoBehaviour {
         allWaypoints[allWaypoints.Length - 1] = targetPosition;
 
         // for-loop assigns each corner
-        for (int i = 1; i < allWaypoints.Length; i++) {
-            allWaypoints[i] = path.corners[i - 1];
+        for (int i = 0; i < path.corners.Length; i++) {
+            allWaypoints[i+1] = path.corners[i];
         }
 
         float pathLength = 0;

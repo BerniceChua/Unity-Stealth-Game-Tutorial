@@ -12,6 +12,7 @@ public class AnimatorSetup {
     private Animator anim;
     private HashIDs hash;
 
+    // the constructor
     public AnimatorSetup(Animator animator, HashIDs hashIDs) {
         anim = animator;
         hash = hashIDs;
