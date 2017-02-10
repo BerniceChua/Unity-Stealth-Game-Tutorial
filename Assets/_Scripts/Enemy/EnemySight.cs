@@ -10,7 +10,7 @@ public class EnemySight : MonoBehaviour {
      */
     [SerializeField] float m_fieldOfViewAngle = 110.0f;
     public bool m_playerInSight;
-    [SerializeField] Vector3 m_personalLastSighting;
+    public Vector3 m_personalLastSighting;
 
     private NavMeshAgent m_nav;
     private SphereCollider m_fieldOfViewTriggerSphereCollider;
