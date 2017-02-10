@@ -65,7 +65,7 @@ public class EnemySight : MonoBehaviour {
      * 3) nothing is blocking enemy's view of player
      */
     private void OnTriggerStay(Collider other) {
-        if (other.gameObject == m_player) {
+        if (other.gameObject == m_player && m_playerHealth.m_health > 0.0f) {
             // if m_player is within trigger zone, but the other 2 conditions are false, it's still false.
             m_playerInSight = false;
 
