@@ -574,6 +574,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 114741974726330158, guid: 9cf6547d69b8d9b48b52e9f59d2ac5dd,
+        type: 2}
+      propertyPath: m_deathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c77607d75e1d9e44a5f856caf15a81b, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9cf6547d69b8d9b48b52e9f59d2ac5dd, type: 2}
   m_IsPrefabParent: 0

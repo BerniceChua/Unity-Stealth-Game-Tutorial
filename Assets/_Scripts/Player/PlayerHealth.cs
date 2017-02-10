@@ -23,13 +23,10 @@ public class PlayerHealth : MonoBehaviour {
         m_hash = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<HashIDs>();
         m_sceneFadeInOut = GameObject.FindGameObjectWithTag(Tags.fader).GetComponent<SceneFadeInOut>();
         m_lastPlayerSighting = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<LastPlayerSighting>();
+
+        m_footstepsAudio = GetComponent<AudioSource>();
     }
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void Update () {
         if (m_health <= 0.0f) {
