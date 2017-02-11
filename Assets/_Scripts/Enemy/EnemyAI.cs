@@ -58,15 +58,15 @@ public class EnemyAI : MonoBehaviour {
         m_nav.speed = m_chaseSpeed;
 
         if (m_nav.remainingDistance < m_nav.stoppingDistance) {
-            m_chaseTimer += Time.deltaTime;
+            m_chaseTimer += Time.deltaTime; // makes enemy wait when it reaches the last sighting.
 
-            if (m_chaseTimer > m_chaseWaitTime) {
+            if (m_chaseTimer > m_chaseWaitTime) { // if enemy has waited long enough, it will go on patrol route again.
                 m_lastPlayerSighting.m_position = m_lastPlayerSighting.m_resetPosition;
                 m_enemySight.m_personalLastSighting = m_lastPlayerSighting.m_resetPosition;
+
                 m_chaseTimer = 0.0f;
             }
-        }
-        else {
+        } else {
             m_chaseTimer = 0.0f;
         }
 
@@ -75,7 +75,7 @@ public class EnemyAI : MonoBehaviour {
     void Patrolling() {
         m_nav.speed = m_patrolSpeed;
 
-        // if the enemy guard is near the destination [ aka .remainingDistance < .stoppingDistance] or has no destination (meaning it lost track of the player) aka .m_resetPosition
+        // if the enemy guard is near the destination [aka .remainingDistance < .stoppingDistance] or has no destination (meaning it lost track of the player) aka .m_resetPosition
         if (m_nav.destination == m_lastPlayerSighting.m_resetPosition || m_nav.remainingDistance < m_nav.stoppingDistance) {
             m_patrolTimer += Time.deltaTime;
 
@@ -84,19 +84,20 @@ public class EnemyAI : MonoBehaviour {
                 if (m_waypointIndex == m_patrolWaypoints.Length - 1) {
                     // if enemy is already at the end of the array of waypoints, we reset the waypoint to zero.
                     m_waypointIndex = 0;
-                }
-                else {
+                } else {
                     // if not, we keep iterating through the array of waypoints.
                     m_waypointIndex++;
                 }
-            } else {
-                // if we are NOT near the destination or destination is NOT the m_resetPosition, reset timer.
+
                 m_patrolTimer = 0.0f;
             }
+        } else {
+            // if we are NOT near the destination or destination is NOT the m_resetPosition, reset timer.
+            m_patrolTimer = 0.0f;
+        }
 
             // update the destination
             m_nav.destination = m_patrolWaypoints[m_waypointIndex].position;
-        }
     }
 
 }
