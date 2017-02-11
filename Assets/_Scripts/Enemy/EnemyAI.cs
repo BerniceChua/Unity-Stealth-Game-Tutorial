@@ -30,7 +30,7 @@ public class EnemyAI : MonoBehaviour {
         m_enemySight = GetComponent<EnemySight>();
         m_nav = GetComponent<NavMeshAgent>();
         m_player = GameObject.FindGameObjectWithTag(Tags.player);
-        m_playerTransform = m_player.transform;
+        //m_playerTransform = m_player.transform;
         m_playerHealth = m_player.GetComponent<PlayerHealth>();
         m_lastPlayerSighting = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<LastPlayerSighting>();
     }
